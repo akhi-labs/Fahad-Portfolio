@@ -42,20 +42,21 @@ export const skills: SkillItem[] = [
   { icon: 'St', name: 'GOOGLE STITCH', description: 'Layout generation' },
 ];
 
-// Roles and dates are from the resume. It gives no per-role detail beyond
-// Zigron's and MTBC's industries, so the other descriptions are left empty
-// rather than invented — the card hides the line until one is filled in.
+// Dates are from the resume; the titles are as Fahad has since confirmed them,
+// so prefer these over the resume's wording. The resume gives no per-role detail
+// beyond Zigron's and MTBC's industries, so the other descriptions are left
+// empty rather than invented — the card hides the line until one is filled in.
 export const experience: RowItem[] = [
   {
     brand: 'ZIGRON INC.',
-    role: 'UI/UX DESIGNER',
+    role: 'LEAD UI/UX DESIGNER',
     year: '2021—NOW',
     description:
       'Communication and product design for an IT company serving energy, telecom, healthcare, smart home and social-venture industries.',
   },
   {
     brand: 'GS TECHNOLOGIES',
-    role: 'UI/UX / GRAPHIC DESIGNER',
+    role: 'UI/UX DESIGNER',
     year: '2020—22',
     description: '',
   },
