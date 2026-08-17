@@ -55,7 +55,7 @@ export const experience: RowItem[] = [
   },
   {
     brand: 'GS TECHNOLOGIES',
-    role: 'UI&UX / GRAPHIC DESIGNER',
+    role: 'UI/UX / GRAPHIC DESIGNER',
     year: '2020—22',
     description: '',
   },
@@ -66,10 +66,10 @@ export const experience: RowItem[] = [
     description: '',
   },
   {
-    // The former 2018—19 UI&UX role at MTBC is folded in here, so this one
+    // The former 2018—19 UI/UX role at MTBC is folded in here, so this one
     // spans both stints rather than splitting the same employer across cards.
     brand: 'MTBC',
-    role: 'UI&UX / JR. GRAPHIC DESIGNER',
+    role: 'UI/UX DESIGNER',
     year: '2017—19',
     description:
       'Interface and graphic design at a US-based healthcare IT company.',
