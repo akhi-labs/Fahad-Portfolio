@@ -62,7 +62,7 @@ export const experience: RowItem[] = [
   },
   {
     brand: 'TURNOTECH INC.',
-    role: 'GRAPHIC DESIGNER',
+    role: 'UI/UX & GRAPHIC DESIGNER',
     year: '2019—21',
     description: '',
   },
