@@ -109,13 +109,10 @@ export function Hero() {
         <h1
           ref={nameRef}
           className={styles.name}
-          aria-label={`${site.name}'s Portfolio`}
+          aria-label={`${site.name} — Portfolio`}
         >
           <span className={styles.nameLine} aria-hidden="true">
-            {site.firstName}
-          </span>
-          <span className={styles.nameLine} aria-hidden="true">
-            {site.lastName}&apos;S
+            {site.firstName} {site.lastName}
           </span>
           <span className={styles.nameLine} aria-hidden="true">
             PORTFOLIO

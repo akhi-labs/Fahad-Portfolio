@@ -1,18 +1,17 @@
-/* Three columns for nine tools — a clean 3x3 rather than the ragged trailing
-   row a five- or six-wide grid would leave. */
+/* Separate cards with gaps, not a shared-hairline matrix — collapsed borders
+   read as a data table rather than a set of cards. Matches the expertise and
+   experience grids. */
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  border-top: 1px solid var(--line);
-  border-left: 1px solid var(--line);
+  gap: 18px;
 }
 
 .card {
+  border: 1px solid var(--line);
   border-radius: var(--radius);
-  min-height: 230px;
-  padding: 18px;
-  border-right: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
+  min-height: 330px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -71,21 +70,26 @@
 @media (max-width: 900px) {
   .grid {
     grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  .card {
+    min-height: 280px;
   }
 }
 
 @media (max-width: 650px) {
   .grid {
     grid-template-columns: 1fr 1fr;
+    gap: 12px;
   }
   .card {
-    min-height: 190px;
-    padding: 14px;
+    min-height: 210px;
+    padding: 16px;
   }
   .icon {
     font-size: 36px;
   }
   .card h3 {
-    font-size: 18px;
+    font-size: 17px;
   }
 }
