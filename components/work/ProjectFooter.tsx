@@ -21,10 +21,6 @@ export function ProjectFooter() {
         <div>
           <a href={site.dribbble} target="_blank" rel="noreferrer">
             DRIBBBLE
-          </a>{' '}
-          ·{' '}
-          <a href={site.resume} download>
-            RÉSUMÉ
           </a>
         </div>
         <div>

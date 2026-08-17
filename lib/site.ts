@@ -9,7 +9,6 @@ export const site = {
   phoneHref: 'tel:+923065555639',
   location: 'Rawalpindi / Islamabad, PK',
   dribbble: 'https://dribbble.com/fahadamjad',
-  resume: '/resume.pdf',
   year: '2026',
   url: 'https://fahad-amjad.vercel.app',
   /**

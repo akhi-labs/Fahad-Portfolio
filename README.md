@@ -44,7 +44,7 @@ The key is public by design — it only ever posts to the address it was issued 
 
 | File | Holds |
 |---|---|
-| `lib/site.ts` | Name, role, email, phone, location, Dribbble, résumé path, deployed URL, contact-form key |
+| `lib/site.ts` | Name, role, email, phone, location, Dribbble, deployed URL, contact-form key |
 | `lib/projects.ts` | The 7 case studies — copy, image paths, live links |
 | `lib/profile.ts` | Expertise, tools/skills, work experience |
 | `lib/branding.ts` | **Generated** — do not hand-edit (see below) |
@@ -63,7 +63,7 @@ node scripts/branding-assets.mjs
 
 That script curates, resizes and rewrites `lib/branding.ts`. Its exclusion rules (minimum height, minimum aspect ratio) and a manual `EXCLUDE` list live at the top of the file; it logs every dropped file and why.
 
-**Site-level** — `public/images/portrait.jpg` (About) and `public/resume.pdf`, both imported from `../Person_Data/`.
+**Site-level** — `public/images/portrait.jpg` (About), imported from `../Person_Data/`.
 
 Source assets live outside this repo in `../Project_Assets/` and `../Person_Data/`, and are resized on import with `sharp` as a one-off authoring step. `sharp` is deliberately **not** a dependency of this site.
 

@@ -82,9 +82,6 @@ export function About() {
             <a className={styles.textLink} href="#experience">
               View experience
             </a>
-            <a className={styles.textLink} href={site.resume} download>
-              Download résumé
-            </a>
           </div>
         </div>
       </div>
