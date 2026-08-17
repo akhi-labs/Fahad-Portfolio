@@ -3,19 +3,8 @@
 import Image from 'next/image';
 import { useReveal } from '@/components/hooks/useReveal';
 import { PlaceholderImage } from '@/components/shared/PlaceholderImage';
-import imageMeta from '@/lib/imageMeta.json';
 import type { Project } from '@/lib/types';
 import styles from './DetailSections.module.css';
-
-const META = imageMeta as Record<string, { w: number; h: number }>;
-
-/** Fixed slots crop whatever doesn't fit, and these sources run from 0.75 to
- *  1.5 — up to 38% of an image was being trimmed. Sizing each figure to its own
- *  image means nothing is cut and there are no letterbox bars either. */
-function ratioOf(src?: string, fallback = 1.65) {
-  const meta = src ? META[src] : undefined;
-  return meta ? meta.w / meta.h : fallback;
-}
 
 type FigureProps = {
   src?: string;
@@ -34,11 +23,7 @@ function Figure({ src, label, alt, variant }: FigureProps) {
         : styles.wideFigure;
 
   return (
-    <figure
-      ref={ref}
-      className={`${className} reveal`}
-      style={{ aspectRatio: ratioOf(src, variant === 'grid' ? 1.2 : 1.65) }}
-    >
+    <figure ref={ref} className={`${className} reveal`}>
       {src ? (
         <Image
           className={styles.media}

@@ -4,18 +4,11 @@
   padding: 0 var(--pad);
 }
 
-/* aspect-ratio is set inline per image so nothing is ever cropped; the value
-   here is only the fallback used by placeholder figures.
-   max-height stops a portrait source from becoming ~2000px tall at full width —
-   past the cap the image letterboxes sideways rather than being trimmed. */
 .wideFigure {
   border-radius: var(--radius);
-  /* Centred, because once max-height caps a tall image the figure itself
-     narrows to keep its ratio — left-aligned it would look like a mistake. */
-  margin: 0 auto;
+  margin: 0;
   overflow: hidden;
   aspect-ratio: 1.65;
-  max-height: min(78vh, 860px);
   /* Anchors the fill images. */
   position: relative;
 }
@@ -24,15 +17,15 @@
   margin-top: 18px;
 }
 
-/* contain, so that once max-height caps a tall figure the image letterboxes
-   instead of being cropped back. */
 .detailWide .media {
   transition: transform 0.9s var(--ease);
-  object-fit: contain;
+  object-fit: cover;
 }
 
-/* No hover zoom here: scaling a contained image pushes its edges outside the
-   figure, which is exactly the crop this section is built to avoid. */
+.wideFigure:hover .media,
+.gridFigure:hover .media {
+  transform: scale(1.025);
+}
 
 .concept {
   display: grid;
@@ -62,9 +55,6 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 18px;
-  /* Each figure now carries its own aspect ratio, so let the shorter of a pair
-     stay short rather than stretching and re-introducing a crop. */
-  align-items: start;
 }
 
 /* Rows after the first sit below their predecessor, not flush against it. */
@@ -72,15 +62,11 @@
   margin-top: 18px;
 }
 
-/* Fallback only — the real ratio is set inline from the image's own dimensions. */
+/* Landscape-leaning, matching the source screenshots. */
 .gridFigure {
   border-radius: var(--radius);
   aspect-ratio: 1.2;
-  max-height: min(66vh, 700px);
   margin: 0;
-  /* Deliberately NOT justify-self:center — these have no intrinsic width (the
-     image is absolutely positioned by `fill`), so removing the grid stretch
-     collapses them to zero width and the images vanish. */
   overflow: hidden;
   position: relative;
 }

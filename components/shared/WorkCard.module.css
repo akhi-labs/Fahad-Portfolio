@@ -14,11 +14,11 @@
   aspect-ratio: 1.3;
 }
 
-/* `contain`, not `cover`: the grid keeps uniform tiles, so a fixed slot would
-   crop odd-ratio covers (the widest is 2.00 and lost a third of its width).
-   Letterboxing against the tile's own background shows every cover whole. */
+/* `cover` so tiles fill edge to edge and the grid reads as one clean set.
+   Odd-ratio covers get cropped rather than letterboxed — a deliberate trade
+   for the full-bleed look. */
 .mediaInner {
-  object-fit: contain;
+  object-fit: cover;
   transition:
     transform 0.9s var(--ease),
     filter 0.6s;
