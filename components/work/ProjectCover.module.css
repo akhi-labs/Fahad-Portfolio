@@ -1,15 +1,20 @@
+/* Height comes from the image's own aspect ratio, set inline. The values here
+   are only the fallback used when a project has no cover yet. */
 .cover {
   border-radius: var(--radius);
   height: min(68vw, 960px);
+  /* Caps a squarish cover so it can't fill more than a screenful; past the cap
+     the image letterboxes sideways rather than being cropped. */
+  max-height: min(88vh, 900px);
   overflow: hidden;
   /* Anchors the fill image. */
   position: relative;
 }
 
+/* No overscale and no parallax: the section now matches the cover's ratio
+   exactly, so any scale above 1 would trim the edges straight back off. */
 .coverMedia {
-  will-change: transform;
-  transform: scale(1.08);
-  object-fit: cover;
+  object-fit: contain;
 }
 
 @media (max-width: 650px) {
