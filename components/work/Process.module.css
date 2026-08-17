@@ -1,0 +1,40 @@
+.process {
+  padding: 120px var(--pad);
+  max-width: var(--max);
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+}
+
+.card {
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+}
+
+.card h2 {
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin: 0 0 38px;
+}
+
+.card p {
+  font-size: 13px;
+  color: #9c9c98;
+  line-height: 1.45;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .process {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 650px) {
+  .process {
+    padding-top: 85px;
+    padding-bottom: 85px;
+  }
+}

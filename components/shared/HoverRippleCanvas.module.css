@@ -1,0 +1,18 @@
+.host {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  /* Under the topbar (90) so page chrome always stays above the effect. */
+  z-index: 60;
+  overflow: hidden;
+}
+
+.canvas {
+  border-radius: var(--radius);
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  transition: opacity 0.3s var(--ease);
+  will-change: transform;
+}

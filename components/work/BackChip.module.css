@@ -1,0 +1,20 @@
+.backChip {
+  position: fixed;
+  left: var(--pad);
+  bottom: 20px;
+  z-index: 80;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 7px 11px;
+  font-size: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: rgba(7, 7, 7, 0.75);
+  backdrop-filter: blur(10px);
+}
+
+@media (max-width: 650px) {
+  .backChip {
+    display: none;
+  }
+}

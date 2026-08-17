@@ -1,0 +1,26 @@
+.marquee {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
+  margin-top: 120px;
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  animation: more 16s linear infinite;
+  padding: 12px 0;
+}
+
+.track span {
+  font-size: clamp(23px, 3.4vw, 52px);
+  letter-spacing: -0.055em;
+  text-transform: uppercase;
+  margin-right: 46px;
+}
+
+@keyframes more {
+  to {
+    transform: translateX(-50%);
+  }
+}

@@ -1,0 +1,113 @@
+.grid {
+  display: grid;
+  grid-template-columns: 0.86fr 1.14fr;
+  gap: 5vw;
+  align-items: start;
+}
+
+.portrait {
+  border-radius: var(--radius);
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  position: sticky;
+  top: 24px;
+}
+
+.portraitMedia {
+  will-change: transform;
+}
+
+/* Sized for a full paragraph rather than the old three-line display line — at
+   the previous clamp(26px, 3.6vw, 56px) uppercase this copy would have run to
+   most of a screen. */
+.statement {
+  font-size: clamp(17px, 1.6vw, 23px);
+  line-height: 1.42;
+  letter-spacing: -0.015em;
+  margin: 0;
+  border-top: 1px solid var(--line);
+  padding-top: 18px;
+  max-width: 62ch;
+}
+
+.info {
+  margin-top: 44px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 24px 26px 26px;
+}
+
+.infoTitle {
+  font-size: 15px;
+  letter-spacing: -0.01em;
+  margin: 0 0 20px;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 5%;
+  margin: 0;
+}
+
+.infoItem dt {
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  margin-bottom: 5px;
+}
+
+.infoItem dd {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.35;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+
+.infoLink {
+  transition: color 0.25s;
+}
+
+.infoLink:hover {
+  color: var(--fg);
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 18px 26px;
+  margin-top: 32px;
+}
+
+.textLink {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  border-bottom: 1px solid var(--fg);
+  padding-bottom: 4px;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .portrait {
+    position: relative;
+    top: 0;
+  }
+}
+
+@media (max-width: 650px) {
+  .info {
+    padding: 20px 18px 22px;
+  }
+  .infoGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}

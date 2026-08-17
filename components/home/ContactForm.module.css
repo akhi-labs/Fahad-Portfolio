@@ -1,0 +1,143 @@
+.form {
+  display: grid;
+  gap: 14px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.input,
+.textarea {
+  width: 100%;
+  background: transparent;
+  color: var(--fg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 13px 14px;
+  font: inherit;
+  font-size: 15px;
+  line-height: 1.35;
+  transition:
+    border-color 0.25s,
+    background 0.25s;
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 132px;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: #4f4f4c;
+}
+
+.input:hover,
+.textarea:hover {
+  border-color: rgba(240, 240, 236, 0.34);
+}
+
+.input:focus-visible,
+.textarea:focus-visible {
+  outline: none;
+  border-color: var(--fg);
+  background: rgba(240, 240, 236, 0.03);
+}
+
+/* Set only after a failed submit, so fields aren't red while still being typed. */
+.invalid,
+.invalid:hover {
+  border-color: #d4726a;
+}
+
+.error {
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: #d4726a;
+  min-height: 1em;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.submit {
+  border: 1px solid var(--fg);
+  border-radius: var(--radius);
+  background: none;
+  color: var(--fg);
+  padding: 13px 26px;
+  font: inherit;
+  font-size: 10px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    background 0.25s,
+    color 0.25s;
+}
+
+.submit:hover:not(:disabled) {
+  background: var(--fg);
+  color: var(--bg);
+}
+
+.submit:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.submit:focus-visible {
+  outline: 1px solid var(--fg);
+  outline-offset: 3px;
+}
+
+/* Announced politely rather than shouted; sits inline next to the button. */
+.status {
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  line-height: 1.4;
+}
+
+.ok {
+  color: var(--fg);
+}
+
+.fail {
+  color: #d4726a;
+}
+
+/* Bot trap: off-screen rather than display:none, which some bots skip. */
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+@media (max-width: 650px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+}

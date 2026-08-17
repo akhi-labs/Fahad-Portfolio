@@ -1,0 +1,24 @@
+.liquid {
+  position: absolute;
+  inset: 0;
+  /* Above the name so the difference blend inverts the letters behind it. */
+  z-index: 2;
+  pointer-events: none;
+  /* Inverts whatever sits behind it: the near-black page turns near-white and
+     the cream letters turn near-black, so the type stays legible inside the
+     puddle instead of being washed out by it. */
+  mix-blend-mode: difference;
+}
+
+.liquid canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Touch devices never get a hovering pointer, and the effect is decorative. */
+@media (pointer: coarse) {
+  .liquid {
+    display: none;
+  }
+}

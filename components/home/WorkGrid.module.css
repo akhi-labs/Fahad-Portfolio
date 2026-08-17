@@ -1,0 +1,38 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 74px 18px;
+}
+
+/* Rest state for the grid-level stagger; GSAP animates out of this. */
+.grid > a {
+  opacity: 0;
+}
+
+/* Structural selector, so it works regardless of the child's hashed class. */
+.grid > a:nth-child(7) {
+  grid-column: 1 / -1;
+  width: calc(50% - 9px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grid > a {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 900px) {
+  .grid {
+    gap: 54px 12px;
+  }
+}
+
+@media (max-width: 650px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .grid > a:nth-child(7) {
+    grid-column: auto;
+    width: auto;
+  }
+}

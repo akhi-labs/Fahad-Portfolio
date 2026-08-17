@@ -1,0 +1,102 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: #efefeb;
+  color: #0b0b0b;
+  z-index: 800;
+  transform: translateY(-102%);
+  transition: transform 0.8s var(--ease);
+  display: flex;
+  flex-direction: column;
+  padding: 18px var(--pad) 22px;
+}
+
+:global(body.menu-open) .overlay {
+  transform: none;
+}
+
+.head {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 44px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+.close {
+  border: 1px solid #111;
+  border-radius: var(--radius);
+  background: none;
+  width: 38px;
+  height: 26px;
+  cursor: pointer;
+  transition:
+    background 0.25s,
+    color 0.25s;
+}
+
+.close:hover {
+  background: #0b0b0b;
+  color: #efefeb;
+}
+
+/* Fingers need a bigger target than a mouse pointer does. */
+@media (pointer: coarse) {
+  .close {
+    width: 52px;
+    height: 44px;
+  }
+}
+
+.list {
+  margin: auto 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.list a {
+  display: block;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.22);
+  padding: 8px 0 13px;
+  overflow: hidden;
+}
+
+.name {
+  display: block;
+  font-size: clamp(32px, 5.4vw, 90px);
+  font-weight: 700;
+  letter-spacing: -0.07em;
+  line-height: 0.78;
+  transform: translateY(120%);
+  transition: transform 0.75s var(--ease);
+}
+
+:global(body.menu-open) .name {
+  transform: none;
+}
+
+:global(body.menu-open) .list a:nth-child(2) .name {
+  transition-delay: 0.06s;
+}
+
+:global(body.menu-open) .list a:nth-child(3) .name {
+  transition-delay: 0.12s;
+}
+
+:global(body.menu-open) .list a:nth-child(4) .name {
+  transition-delay: 0.18s;
+}
+
+.foot {
+  display: flex;
+  justify-content: space-between;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+@media (max-width: 650px) {
+  .name {
+    font-size: 15vw;
+  }
+}

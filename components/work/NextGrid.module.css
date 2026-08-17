@@ -1,0 +1,15 @@
+.nextGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  padding: 80px var(--pad) 120px;
+  max-width: var(--max);
+  margin: auto;
+}
+
+@media (max-width: 650px) {
+  .nextGrid {
+    grid-template-columns: 1fr;
+    padding-top: 55px;
+  }
+}

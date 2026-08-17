@@ -1,0 +1,52 @@
+.rows {
+  border-top: 1px solid var(--line);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 0.7fr 1fr 0.35fr 1.1fr;
+  gap: 28px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line);
+  align-items: start;
+}
+
+.brand {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.role {
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.year {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.row p {
+  margin: 0;
+  color: #9a9a96;
+  line-height: 1.35;
+  font-size: 13px;
+}
+
+@media (max-width: 900px) {
+  .row {
+    grid-template-columns: 1fr 1fr;
+  }
+  .row p {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 650px) {
+  .row {
+    gap: 16px;
+  }
+}

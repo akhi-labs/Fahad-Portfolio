@@ -1,0 +1,31 @@
+.curtain {
+  position: fixed;
+  inset: 0;
+  background: #f0f0ec;
+  z-index: 900;
+  transform: translateY(102%);
+  pointer-events: none;
+}
+
+.enter {
+  animation: transitionIn 0.65s var(--ease) forwards;
+}
+
+.leave {
+  animation: transitionOut 0.8s var(--ease) forwards;
+}
+
+@keyframes transitionIn {
+  to {
+    transform: none;
+  }
+}
+
+@keyframes transitionOut {
+  from {
+    transform: none;
+  }
+  to {
+    transform: translateY(-102%);
+  }
+}

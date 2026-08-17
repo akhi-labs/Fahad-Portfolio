@@ -1,0 +1,19 @@
+.cover {
+  border-radius: var(--radius);
+  height: min(68vw, 960px);
+  overflow: hidden;
+  /* Anchors the fill image. */
+  position: relative;
+}
+
+.coverMedia {
+  will-change: transform;
+  transform: scale(1.08);
+  object-fit: cover;
+}
+
+@media (max-width: 650px) {
+  .cover {
+    height: 82vw;
+  }
+}

@@ -1,0 +1,115 @@
+.footer {
+  padding: 130px 0 25px;
+}
+
+/* Project pages drop the oversized name, so the block needs less headroom. */
+.footerCompact {
+  padding-top: 90px;
+}
+
+.footerCompact .statement {
+  margin-top: 0;
+}
+
+.title {
+  font-size: clamp(48px, 8.2vw, 129px);
+  line-height: 0.72;
+  letter-spacing: -0.08em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.title > span {
+  display: block;
+}
+
+.contact {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 55px 0 70px;
+}
+
+.round {
+  width: 178px;
+  height: 84px;
+  border: 1px solid var(--fg);
+  border-radius: var(--radius);
+  display: grid;
+  place-items: center;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  transition:
+    background 0.35s,
+    color 0.35s;
+  flex: none;
+}
+
+.round:hover {
+  background: var(--fg);
+  color: var(--bg);
+}
+
+/* Capped rather than full width: a contact form that spans 1600px has fields
+   far wider than anyone types into, and the eye loses the label-to-input link. */
+.form {
+  max-width: 720px;
+}
+
+.statement {
+  font-size: clamp(19px, 2.4vw, 36px);
+  line-height: 1.04;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  margin: 50px 0;
+  max-width: 1150px;
+}
+
+.bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.bottom div:nth-child(2) {
+  text-align: center;
+}
+
+.bottom div:last-child {
+  text-align: right;
+}
+
+@media (max-width: 900px) {
+  .image {
+    height: 70vw;
+  }
+}
+
+@media (max-width: 650px) {
+  .footer {
+    padding-top: 90px;
+  }
+  .contact {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 35px;
+  }
+  .round {
+    width: 150px;
+    height: 74px;
+  }
+  .image {
+    height: 88vw;
+  }
+  .bottom {
+    grid-template-columns: 1fr 1fr;
+  }
+  .bottom div:nth-child(2) {
+    display: none;
+  }
+}

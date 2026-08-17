@@ -1,0 +1,104 @@
+.loader {
+  position: fixed;
+  inset: 0;
+  color: #070707;
+  z-index: 1000;
+}
+
+.done {
+  pointer-events: none;
+}
+
+/* The two halves that peel apart, moving by transform only — the clip-path
+   itself never animates. The bottom panel's seam sits 0.6% higher than the
+   top's so the halves overlap rather than abut: two exactly-abutting clip
+   edges composite their antialiased pixels to less than opaque, which shows
+   as a thin dark line across the closed loader. */
+.panel {
+  position: absolute;
+  inset: 0;
+  background: #f0f0ec;
+  z-index: 1;
+  will-change: transform;
+}
+
+.panelTop {
+  clip-path: polygon(
+    0% 0%,
+    100% 0%,
+    100% 48%,
+    95% 52%,
+    90% 48%,
+    85% 52%,
+    80% 48%,
+    75% 52%,
+    70% 48%,
+    65% 52%,
+    60% 48%,
+    55% 52%,
+    50% 48%,
+    45% 52%,
+    40% 48%,
+    35% 52%,
+    30% 48%,
+    25% 52%,
+    20% 48%,
+    15% 52%,
+    10% 48%,
+    5% 52%,
+    0% 48%
+  );
+}
+
+.panelBottom {
+  clip-path: polygon(
+    0% 100%,
+    0% 47.4%,
+    5% 51.4%,
+    10% 47.4%,
+    15% 51.4%,
+    20% 47.4%,
+    25% 51.4%,
+    30% 47.4%,
+    35% 51.4%,
+    40% 47.4%,
+    45% 51.4%,
+    50% 47.4%,
+    55% 51.4%,
+    60% 47.4%,
+    65% 51.4%,
+    70% 47.4%,
+    75% 51.4%,
+    80% 47.4%,
+    85% 51.4%,
+    90% 47.4%,
+    95% 51.4%,
+    100% 47.4%,
+    100% 100%
+  );
+}
+
+/* Traces the seam just before the halves separate. */
+.seam {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  background: #070707;
+  opacity: 0.25;
+  z-index: 2;
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+
+/* No panel movement — the loader just fades out. The global reduced-motion rule
+   in globals.css collapses this transition to near-instant. */
+@media (prefers-reduced-motion: reduce) {
+  .loader {
+    transition: opacity 0.3s var(--ease);
+  }
+  .done {
+    opacity: 0;
+  }
+}

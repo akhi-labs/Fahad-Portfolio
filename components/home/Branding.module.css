@@ -1,0 +1,133 @@
+/* Padding is declared here rather than using the global `.section` class: the
+   emission order of globals.css vs CSS Modules isn't guaranteed, so a module
+   trying to zero out `.section { padding: 130px 0 }` would be a coin flip.
+   Zero top padding is deliberate — it lets the work grid's own bottom padding
+   carry the gap so the two read as one block of work. */
+.branding {
+  padding: 0 0 130px;
+}
+
+.head {
+  margin-bottom: 8px;
+}
+
+.rows {
+  --tile-h: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 46px;
+}
+
+.label {
+  display: inline-block;
+  margin-bottom: 14px;
+}
+
+.labelLink {
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 2px;
+  transition: border-color 0.25s;
+}
+
+.labelLink:hover {
+  border-color: var(--fg);
+}
+
+/* Full-bleed band. `contain` keeps the moving track from invalidating layout
+   outside itself; `touch-action` guarantees a vertical swipe still scrolls the
+   page even when it starts inside the band. */
+.viewport {
+  overflow: hidden;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  contain: layout paint;
+  touch-action: pan-y;
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  column-gap: 12px;
+  padding: 12px 0;
+  will-change: transform;
+}
+
+/* Each copy is its own wrapper so the set width can be measured exactly —
+   deriving it from track.scrollWidth / copies gets the trailing gap wrong and
+   drifts a few px per wrap, which shows up as a visible jump. */
+.set {
+  display: flex;
+  column-gap: 12px;
+  padding-right: 12px;
+}
+
+.tile {
+  flex: 0 0 auto;
+  height: var(--tile-h);
+  background: #111;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  position: relative;
+  display: block;
+}
+
+button.tile {
+  cursor: pointer;
+}
+
+.tileImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s var(--ease);
+}
+
+button.tile:hover .tileImg {
+  transform: scale(1.03);
+}
+
+.tile:focus-visible {
+  outline: 1px solid var(--fg);
+  outline-offset: 3px;
+}
+
+@media (max-width: 900px) {
+  .rows {
+    --tile-h: 200px;
+    gap: 34px;
+  }
+}
+
+@media (max-width: 650px) {
+  .branding {
+    padding-bottom: 90px;
+  }
+  .rows {
+    --tile-h: 150px;
+    gap: 26px;
+  }
+}
+
+/* No JS motion under reduced motion, so the band becomes a natively scrollable
+   strip instead — the work stays fully browsable and clickable. */
+@media (prefers-reduced-motion: reduce) {
+  .viewport {
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+  }
+  .track {
+    transform: none !important;
+    will-change: auto;
+  }
+  .set ~ .set {
+    display: none;
+  }
+  .tile {
+    scroll-snap-align: start;
+  }
+}

@@ -1,0 +1,85 @@
+.detailWide {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--pad);
+}
+
+.wideFigure {
+  border-radius: var(--radius);
+  margin: 0;
+  overflow: hidden;
+  aspect-ratio: 1.65;
+  /* Anchors the fill images. */
+  position: relative;
+}
+
+.wideFigureLast {
+  margin-top: 18px;
+}
+
+.detailWide .media {
+  transition: transform 0.9s var(--ease);
+  object-fit: cover;
+}
+
+.wideFigure:hover .media,
+.gridFigure:hover .media {
+  transform: scale(1.025);
+}
+
+.concept {
+  display: grid;
+  grid-template-columns: 0.55fr 1.45fr;
+  gap: 5vw;
+  padding: 105px 0;
+}
+
+/* Kept in step with the OVERVIEW / CLIENT labels on the same page. */
+.concept h2 {
+  font-size: 11px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: #8a8a86;
+  margin: 0;
+}
+
+.concept p {
+  font-size: clamp(25px, 3.4vw, 52px);
+  line-height: 0.98;
+  letter-spacing: -0.05em;
+  margin: 0;
+}
+
+.detailGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+/* Rows after the first sit below their predecessor, not flush against it. */
+.detailGrid + .detailGrid {
+  margin-top: 18px;
+}
+
+/* Landscape-leaning, matching the source screenshots — a portrait slot would
+   crop the widest of them in half. */
+.gridFigure {
+  border-radius: var(--radius);
+  aspect-ratio: 1.2;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+@media (max-width: 900px) {
+  .concept {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 650px) {
+  .detailGrid {
+    grid-template-columns: 1fr;
+  }
+}
