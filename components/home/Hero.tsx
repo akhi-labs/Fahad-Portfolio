@@ -106,12 +106,19 @@ export function Hero() {
   return (
     <section className={styles.hero} id="top">
       <div className={styles.copy}>
-        <h1 ref={nameRef} className={styles.name} aria-label={site.name}>
+        <h1
+          ref={nameRef}
+          className={styles.name}
+          aria-label={`${site.name}'s Portfolio`}
+        >
           <span className={styles.nameLine} aria-hidden="true">
             {site.firstName}
           </span>
           <span className={styles.nameLine} aria-hidden="true">
-            {site.lastName}
+            {site.lastName}&apos;S
+          </span>
+          <span className={styles.nameLine} aria-hidden="true">
+            PORTFOLIO
           </span>
         </h1>
         <HeroLiquid />

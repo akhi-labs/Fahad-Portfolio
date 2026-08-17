@@ -13,7 +13,6 @@ function Card({ item }: { item: SkillItem }) {
       <div className={styles.icon}>{item.icon}</div>
       <div>
         <h3>{item.name}</h3>
-        <span className={styles.pct}>{item.percent}</span>
         <p>{item.description}</p>
       </div>
     </div>

@@ -8,7 +8,7 @@ const POINTS = 5;
 // together at rest.
 const CHASE = [0.72, 0.3, 0.2, 0.14, 0.1];
 
-const BASE_RADIUS = 0.175;
+const BASE_RADIUS = 0.125;
 
 export type LiquidRenderer = {
   canvas: HTMLCanvasElement;
@@ -91,7 +91,7 @@ export function createLiquidRenderer(): LiquidRenderer | null {
 
     // Slow breathing so a resting puddle never looks frozen.
     const t = (performance.now() - start0) / 1000;
-    program.uniforms.uRadius.value = BASE_RADIUS + Math.sin(t * 1.1) * 0.0065;
+    program.uniforms.uRadius.value = BASE_RADIUS + Math.sin(t * 1.1) * 0.005;
 
     renderer.render({ scene: mesh });
     raf = requestAnimationFrame(frame);

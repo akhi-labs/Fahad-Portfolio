@@ -14,11 +14,11 @@ export function WorkGrid() {
   return (
     <section className="section shell" id="work">
       <SectionTitleRow
-        lines={['FEATURED', 'WORK']}
+        lines={['MY', 'WORK']}
         right={
           <p className="section-lead">
-            Selected case studies, each one taken from first research through to
-            a finished, shippable design system.
+            A selection of work that reflects my approach to design, from early
+            ideas and exploration to polished final outcomes.
           </p>
         }
       />

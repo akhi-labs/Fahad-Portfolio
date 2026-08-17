@@ -87,7 +87,7 @@ export function BrandingRow({
 
   const label = row.href ? (
     <TransitionLink href={row.href} className={styles.labelLink} data-cursor="view">
-      {row.label} — VIEW CASE STUDY
+      {row.label}
     </TransitionLink>
   ) : (
     row.label

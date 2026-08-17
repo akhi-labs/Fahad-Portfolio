@@ -24,7 +24,6 @@ export type Project = {
 export type SkillItem = {
   icon: string;
   name: string;
-  percent: string;
   description: string;
 };
 

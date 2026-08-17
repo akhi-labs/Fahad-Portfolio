@@ -28,43 +28,51 @@ export const expertise: ExpertiseItem[] = [
   },
 ];
 
-// Percentages are taken directly from Fahad's resume.
 export const skills: SkillItem[] = [
   {
     icon: 'Ps',
     name: 'PHOTOSHOP',
-    percent: 'IMAGE EDITING / 80%',
     description: 'Retouching, compositing and campaign artwork.',
-  },
-  {
-    icon: 'Fg',
-    name: 'FIGMA',
-    percent: 'PRODUCT DESIGN / 80%',
-    description: 'Interface systems, components and prototypes.',
-  },
-  {
-    icon: 'Lr',
-    name: 'LIGHTROOM',
-    percent: 'PHOTO / 80%',
-    description: 'Colour grading and photographic consistency.',
   },
   {
     icon: 'Ai',
     name: 'ILLUSTRATOR',
-    percent: 'VECTOR / 75%',
     description: 'Logos, icon sets and vector illustration.',
+  },
+  {
+    icon: 'Fg',
+    name: 'FIGMA',
+    description: 'Interface systems, components and prototypes.',
   },
   {
     icon: 'Xd',
     name: 'ADOBE XD',
-    percent: 'PROTOTYPING / 70%',
     description: 'Interactive prototypes and design handoff.',
   },
   {
-    icon: 'Id',
-    name: 'INDESIGN',
-    percent: 'LAYOUT / 65%',
-    description: 'Editorial layout and print-ready documents.',
+    icon: 'Cv',
+    name: 'CANVA',
+    description: 'Fast social and marketing collateral.',
+  },
+  {
+    icon: 'Gm',
+    name: 'GEMINI',
+    description: 'Concepting, copy exploration and image generation.',
+  },
+  {
+    icon: 'Oa',
+    name: 'OPENAI',
+    description: 'Ideation, research and asset generation.',
+  },
+  {
+    icon: 'Cl',
+    name: 'CLAUDE',
+    description: 'Design thinking, writing and production support.',
+  },
+  {
+    icon: 'St',
+    name: 'GOOGLE STITCH',
+    description: 'Generating and iterating interface layouts.',
   },
 ];
 
@@ -80,23 +88,25 @@ export const experience: RowItem[] = [
       'Communication and product design for an IT company serving energy, telecom, healthcare, smart home and social-venture industries.',
   },
   {
+    brand: 'GS TECHNOLOGIES',
+    role: 'UI&UX / GRAPHIC DESIGNER',
+    year: '2020—22',
+    description: '',
+  },
+  {
     brand: 'TURNOTECH INC.',
     role: 'GRAPHIC DESIGNER',
     year: '2019—21',
     description: '',
   },
   {
+    // The former 2018—19 UI&UX role at MTBC is folded in here, so this one
+    // spans both stints rather than splitting the same employer across cards.
     brand: 'MTBC',
-    role: 'UI&UX / GRAPHIC DESIGNER',
-    year: '2018—19',
+    role: 'UI&UX / JR. GRAPHIC DESIGNER',
+    year: '2017—19',
     description:
       'Interface and graphic design at a US-based healthcare IT company.',
-  },
-  {
-    brand: 'MTBC',
-    role: 'JR. GRAPHIC DESIGNER',
-    year: '2017—18',
-    description: '',
   },
   {
     brand: 'MTBC',

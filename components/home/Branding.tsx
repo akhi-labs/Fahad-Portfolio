@@ -154,11 +154,11 @@ export function Branding() {
     <section ref={sectionRef} className={styles.branding} id="branding">
       <div className={`${styles.head} shell`}>
         <SectionTitleRow
-          lines={['BRAND', 'IDENTITY']}
+          lines={['BRAND', 'WORK']}
           right={
             <p className="section-lead">
-              Identity and collateral for three companies — logo systems, packaging and
-              social design. Open any frame to view it full size.
+              A selection of branding work focused on creating clear, distinctive and
+              consistent visual identities.
             </p>
           }
         />

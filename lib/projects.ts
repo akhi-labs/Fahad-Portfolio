@@ -18,6 +18,23 @@ const detailPaths = (slug: string, count: number) =>
 
 export const PROJECTS: Project[] = [
   {
+    slug: 'mysentry',
+    title: 'MYSENTRY',
+    category: 'SAFETY APP',
+    year: '',
+    client: 'MYSENTRY.AI',
+    link: 'https://mysentry.ai/',
+    image: '/work/mysentry/cover.jpg',
+    details: detailPaths('mysentry', 5),
+    statement:
+      'A personal safety app for women, families, seniors and lone workers. It helps people get help quickly, share their location and stay connected during unsafe or emergency situations.',
+    research: '',
+    design: '',
+    development: '',
+    concept:
+      'A mobile and wearable safety platform combining emergency alerting, 24/7 monitoring support, location sharing, meeting check-ins, route protection and fall detection.',
+  },
+  {
     slug: 'denta-smart',
     title: 'DENTA SMART',
     category: 'AI HEALTHCARE',
@@ -83,23 +100,6 @@ export const PROJECTS: Project[] = [
     development: '',
     concept:
       'One connected ecosystem rather than isolated devices: cameras, video doorbell and smart lock managed from a single app, backed by a monitoring centre that verifies alarms with a real call and escalates to law enforcement when needed.',
-  },
-  {
-    slug: 'mysentry',
-    title: 'MYSENTRY',
-    category: 'SAFETY APP',
-    year: '',
-    client: 'MYSENTRY.AI',
-    link: 'https://mysentry.ai/',
-    image: '/work/mysentry/cover.jpg',
-    details: detailPaths('mysentry', 5),
-    statement:
-      'A personal safety app for women, families, seniors and lone workers. It helps people get help quickly, share their location and stay connected during unsafe or emergency situations.',
-    research: '',
-    design: '',
-    development: '',
-    concept:
-      'A mobile and wearable safety platform combining emergency alerting, 24/7 monitoring support, location sharing, meeting check-ins, route protection and fall detection.',
   },
   {
     slug: 'stress-guru',
