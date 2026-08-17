@@ -28,52 +28,18 @@ export const expertise: ExpertiseItem[] = [
   },
 ];
 
+// Descriptors are deliberately terse — they sit inline beside the tool name in a
+// compact index, not in a card with room for a sentence.
 export const skills: SkillItem[] = [
-  {
-    icon: 'Ps',
-    name: 'PHOTOSHOP',
-    description: 'Retouching, compositing and campaign artwork.',
-  },
-  {
-    icon: 'Ai',
-    name: 'ILLUSTRATOR',
-    description: 'Logos, icon sets and vector illustration.',
-  },
-  {
-    icon: 'Fg',
-    name: 'FIGMA',
-    description: 'Interface systems, components and prototypes.',
-  },
-  {
-    icon: 'Xd',
-    name: 'ADOBE XD',
-    description: 'Interactive prototypes and design handoff.',
-  },
-  {
-    icon: 'Cv',
-    name: 'CANVA',
-    description: 'Fast social and marketing collateral.',
-  },
-  {
-    icon: 'Gm',
-    name: 'GEMINI',
-    description: 'Concepting, copy exploration and image generation.',
-  },
-  {
-    icon: 'Oa',
-    name: 'OPENAI',
-    description: 'Ideation, research and asset generation.',
-  },
-  {
-    icon: 'Cl',
-    name: 'CLAUDE',
-    description: 'Design thinking, writing and production support.',
-  },
-  {
-    icon: 'St',
-    name: 'GOOGLE STITCH',
-    description: 'Generating and iterating interface layouts.',
-  },
+  { icon: 'Ps', name: 'PHOTOSHOP', description: 'Retouching & compositing' },
+  { icon: 'Ai', name: 'ILLUSTRATOR', description: 'Vector & icon sets' },
+  { icon: 'Fg', name: 'FIGMA', description: 'Interface systems' },
+  { icon: 'Xd', name: 'ADOBE XD', description: 'Prototyping & handoff' },
+  { icon: 'Cv', name: 'CANVA', description: 'Social collateral' },
+  { icon: 'Gm', name: 'GEMINI', description: 'Concepting & imagery' },
+  { icon: 'Oa', name: 'OPENAI', description: 'Ideation & research' },
+  { icon: 'Cl', name: 'CLAUDE', description: 'Writing & production' },
+  { icon: 'St', name: 'GOOGLE STITCH', description: 'Layout generation' },
 ];
 
 // Roles and dates are from the resume. It gives no per-role detail beyond
