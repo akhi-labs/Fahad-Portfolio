@@ -120,7 +120,6 @@ export function Hero() {
         </h1>
         <HeroLiquid />
       </div>
-      <span className={styles.tag}>Portfolio / 2016—{site.year}</span>
     </section>
   );
 }
